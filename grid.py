@@ -44,6 +44,8 @@ class Grid:
                     self.grid[i][j] = AdditiveLayerStore()
                 elif self.draw_style == Grid.DRAW_STYLE_SEQUENCE:
                     self.grid[i][j] = SequenceLayerStore()
+    def __getitem__(self, index):
+        return self.grid[index]
     def increase_brush_size(self):
         """
         Increases the size of the brush by 1,
