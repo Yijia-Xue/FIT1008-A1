@@ -55,6 +55,10 @@ class Grid:
         then do nothing.
         """
         raise NotImplementedError()
+        if self.brush_size == 5: 
+            print('The max brush size is 5.')
+        elif self.brush_size < 5: 
+            self.brush_size += 1
 
     def decrease_brush_size(self):
         """
