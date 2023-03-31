@@ -46,6 +46,8 @@ class Grid:
                     self.grid[i][j] = SequenceLayerStore()
     def __getitem__(self, index):
         return self.grid[index]
+    def __setitem__(self, index, value):
+        self.grid[index] = value
     def increase_brush_size(self):
         """
         Increases the size of the brush by 1,
