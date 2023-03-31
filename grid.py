@@ -35,6 +35,15 @@ class Grid:
         self.draw_style = draw_style
         self.brush_size = self.DEFAULT_BRUSH_SIZE
         self.grid = ArrayR(x)
+        for i in range(x):
+            self.grid[i] = ArrayR(y)
+            for j in range(y):
+                if self.draw_style == Grid.DRAW_STYLE_SET:
+                    self.grid[i][j] = SetLayerStore()
+                elif self.draw_style == Grid.DRAW_STYLE_ADD:
+                    self.grid[i][j] = AdditiveLayerStore()
+                elif self.draw_style == Grid.DRAW_STYLE_SEQUENCE:
+                    self.grid[i][j] = SequenceLayerStore()
     def increase_brush_size(self):
         """
         Increases the size of the brush by 1,
