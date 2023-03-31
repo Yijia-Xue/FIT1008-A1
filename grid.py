@@ -34,6 +34,7 @@ class Grid:
         self.y = y
         self.draw_style = draw_style
         self.brush_size = self.DEFAULT_BRUSH_SIZE
+        self.grid = ArrayR(x)
     def increase_brush_size(self):
         """
         Increases the size of the brush by 1,
