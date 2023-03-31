@@ -67,6 +67,10 @@ class Grid:
         then do nothing.
         """
         raise NotImplementedError()
+        if self.brush_size == 0: 
+            print('The min brush size is 0.')
+        elif self.brush_size > 0: 
+            self.brush_size -= 1
 
     def special(self):
         """
