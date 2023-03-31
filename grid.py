@@ -77,3 +77,12 @@ class Grid:
         Activate the special affect on all grid squares.
         """
         raise NotImplementedError()
+        for i in range(self.x):
+            for j in range(self.y):
+                layer_store = self.grid[i][j]
+                if isinstance(layer_store, SetLayerStore):
+                    layer_store.special()
+                elif isinstance(layer_store, AdditiveLayerStore):
+                    layer_store.special()
+                elif isinstance(layer_store, SequenceLayerStore):
+                    layer_store.special()
